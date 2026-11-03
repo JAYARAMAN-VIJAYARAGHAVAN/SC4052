@@ -1,0 +1,26 @@
+from pathlib import Path
+EXPERIMENT = 'corridor_quantum_combat_v1'
+SCENARIO = 'deadly_corridor.cfg'
+SEED = 7
+SCREEN_SIZE = 84
+FRAME_STACK = 4
+N_QUBITS = 8
+N_LAYERS = 3
+ACTIONS = ('FORWARD', 'STRAFE_LEFT', 'STRAFE_RIGHT', 'TURN_LEFT', 'TURN_RIGHT', 'SHOOT')
+N_ACTIONS = len(ACTIONS)
+TOTAL_STEPS = 500_000
+ROLLOUT_STEPS = 128
+EPOCHS = 4
+MINIBATCH = 32
+LR = 2.5e-4
+GAMMA = .99
+GAE_LAMBDA = .95
+CLIP = .2
+ENTROPY_COEF = .02
+VALUE_COEF = .5
+DETECTOR_COEF = .2
+MAX_GRAD_NORM = .5
+ACTION_TICS = 4
+MAX_EPISODE_STEPS = 525
+SAVE_EVERY = 5000
+CHECKPOINT = Path(__file__).resolve().parent / 'checkpoints' / EXPERIMENT / 'latest.pt'
